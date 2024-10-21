@@ -53,5 +53,19 @@
 	"feature_library": "Wissensbibliothek",
 	"feature_calls": "Live-Anrufe",
 	"feature_groups": "Gruppen-Erstellung",
-	"feature_planning": "Event-Planung"
+	"feature_planning": "Event-Planung",
+	"contribution_code_title": "Code",
+	"contribution_code_description": "Trage durch Fehlerbehebungen und neue Funktionen zu unserem Code bei",
+	"contribution_design_title": "Design",
+	"contribution_design_description": "Hilf uns, unsere UI/UX zu verbessern und visuelle Assets zu erstellen",
+	"contribution_translation_title": "Übersetzung",
+	"contribution_translation_description": "Hilf dabei, die App in verschiedene Sprachen zu übersetzen",
+	"contribution_docs_title": "Dokumentation",
+	"contribution_docs_description": "Verbessere unsere Dokumentation und hilf anderen beim Lernen",
+	"contribute_section_title": "Möglichkeiten zum Mitwirken",
+	"join_mission_title": "Werde Teil unserer Mission",
+	"join_mission_description": "Wir bauen diese Plattform gemeinsam. Jeder Beitrag macht einen Unterschied, egal wie klein.",
+	"repositories_title": "Unsere Repositories",
+	"get_in_touch_title": "Kontaktiere uns",
+	"get_in_touch_description": "Hast du Fragen oder möchtest du mitmachen? Erreiche uns über einen dieser Kanäle:"
 }

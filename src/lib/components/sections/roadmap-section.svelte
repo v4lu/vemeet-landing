@@ -2,7 +2,7 @@
 	import { Icons } from '../icons';
 	import { Button } from '../ui';
 	import * as m from '$lib/paraglide/messages';
-	import { fly } from 'svelte/transition';
+	import gsap from 'gsap';
 
 	let sectionVisible = $state(false);
 	let sectionElement: HTMLElement;
@@ -44,12 +44,83 @@
 		}
 	];
 
+	const initializeAnimations = () => {
+		gsap.set('.roadmap-header', { y: 50, opacity: 0 });
+		gsap.set('.timeline-line', { scaleY: 0, transformOrigin: 'top center' });
+		gsap.set('.roadmap-item', { opacity: 0 });
+		gsap.set('.feature-item', { y: 20, opacity: 0 });
+		gsap.set('.roadmap-cta', { y: 30, opacity: 0 });
+
+		const tl = gsap.timeline();
+
+		tl.to('.roadmap-header', {
+			y: 0,
+			opacity: 1,
+			duration: 1,
+			ease: 'power3.out'
+		});
+
+		tl.to(
+			'.timeline-line',
+			{
+				scaleY: 1,
+				duration: 1.2,
+				ease: 'none'
+			},
+			'-=0.5'
+		);
+
+		const roadmapItems = document.querySelectorAll('.roadmap-item');
+		roadmapItems.forEach((item, index) => {
+			const isLeft = index % 2 === 0;
+			gsap.set(item, { x: isLeft ? -100 : 100 });
+
+			tl.to(
+				item,
+				{
+					x: 0,
+					opacity: 1,
+					duration: 1,
+					ease: 'power3.out'
+				},
+				`-=${0.5}`
+			);
+
+			const features = item.querySelectorAll('.feature-item');
+			features.forEach((feature) => {
+				tl.to(
+					feature,
+					{
+						y: 0,
+						opacity: 1,
+						duration: 0.5,
+						ease: 'power2.out'
+					},
+					`-=${0.3}`
+				);
+			});
+		});
+
+		tl.to(
+			'.roadmap-cta',
+			{
+				y: 0,
+				opacity: 1,
+				duration: 1,
+				ease: 'power3.out'
+			},
+			'-=0.5'
+		);
+	};
+
 	$effect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
+					if (entry.isIntersecting && !sectionVisible) {
 						sectionVisible = true;
+						// Small delay to ensure elements are ready
+						setTimeout(initializeAnimations, 100);
 						observer.unobserve(entry.target);
 					}
 				});
@@ -75,10 +146,7 @@
 <section class="py-24" bind:this={sectionElement}>
 	<div class="container px-4">
 		{#if sectionVisible}
-			<div
-				in:fly={{ y: 50, duration: 1000 }}
-				class="max-w-4xl mx-auto text-center space-y-6 mb-16 animate-in fade-in duration-700"
-			>
+			<div class="roadmap-header max-w-4xl mx-auto text-center space-y-6 mb-16">
 				<h2 class="text-3xl md:text-4xl font-bold text-primary">{m.roadmap_title()}</h2>
 				<p class="text-lg text-muted-foreground">
 					{m.roadmap_description()}
@@ -86,13 +154,12 @@
 			</div>
 
 			<div class="relative max-w-5xl mx-auto">
-				<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/20"></div>
+				<div
+					class="timeline-line absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/20"
+				></div>
 
 				{#each roadmapSteps as step, index}
-					<div
-						class="relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 last:mb-0 animate-in fade-in duration-700"
-						style="animation-delay: {index * 150}ms"
-					>
+					<div class="roadmap-item relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 last:mb-0">
 						<div class={`md:text-right ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
 							<div class="flex items-center justify-center md:justify-end gap-4">
 								<span class="text-xl font-semibold text-primary">{step.date}</span>
@@ -130,7 +197,7 @@
 								<p class="text-muted-foreground">{m[step.descriptionKey]()}</p>
 								<ul class="grid grid-cols-2 gap-2">
 									{#each step.features as featureKey}
-										<li class="flex items-center gap-2 text-sm text-muted-foreground">
+										<li class="feature-item flex items-center gap-2 text-sm text-muted-foreground">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												class="size-4 text-primary"
@@ -155,7 +222,7 @@
 				{/each}
 			</div>
 
-			<div class="text-center mt-16 animate-in fade-in duration-700 delay-500">
+			<div class="roadmap-cta text-center mt-16">
 				<p class="text-muted-foreground mb-4">{m.roadmap_cta_text()}</p>
 				<Button size="lg">
 					{m.roadmap_cta_button()}

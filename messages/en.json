@@ -53,5 +53,19 @@
 	"feature_library": "Resource library",
 	"feature_calls": "Live calls",
 	"feature_groups": "Group creation",
-	"feature_planning": "Event planning"
+	"feature_planning": "Event planning",
+	"contribution_code_title": "Code",
+	"contribution_code_description": "Contribute to our codebase through bug fixes and new features",
+	"contribution_design_title": "Design",
+	"contribution_design_description": "Help improve our UI/UX and create visual assets",
+	"contribution_translation_title": "Translation",
+	"contribution_translation_description": "Help translate the app into different languages",
+	"contribution_docs_title": "Documentation",
+	"contribution_docs_description": "Improve our docs and help others learn",
+	"contribute_section_title": "Ways to Contribute",
+	"join_mission_title": "Join Our Mission",
+	"join_mission_description": "We're building this platform together. Every contribution makes a difference, no matter how small.",
+	"repositories_title": "Our Repositories",
+	"get_in_touch_title": "Get in Touch",
+	"get_in_touch_description": "Have questions or want to get involved? Reach out to us through any of these channels:"
 }

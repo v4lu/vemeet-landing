@@ -33,3 +33,53 @@ export const community_lower_features = [
 		title: m.feature_resources_title()
 	}
 ];
+
+export const contributionAreas = [
+	{
+		Icon: Icons.Code,
+		titleKey: 'contribution_code_title',
+		descriptionKey: 'contribution_code_description'
+	},
+	{
+		Icon: Icons.Design,
+		titleKey: 'contribution_design_title',
+		descriptionKey: 'contribution_design_description'
+	},
+	{
+		Icon: Icons.Translation,
+		titleKey: 'contribution_translation_title',
+		descriptionKey: 'contribution_translation_description'
+	},
+	{
+		Icon: Icons.Docs,
+		titleKey: 'contribution_docs_title',
+		descriptionKey: 'contribution_docs_description'
+	}
+];
+
+export const repositories = [
+	{
+		name: 'vemeet-web',
+		description: 'Web APP',
+		language: 'TypeScript Svelte',
+		color: 'bg-orange-600'
+	},
+	{
+		name: 'vemeet-api',
+		description: 'Backend API',
+		language: 'Kotlin Springboot',
+		color: 'bg-purple-600'
+	},
+	{
+		name: 'vemeet-mobile',
+		description: 'TBA',
+		language: 'TBA',
+		color: 'bg-red-500'
+	},
+	{
+		name: 'vemeet-landing',
+		description: 'Web Landing Page',
+		language: 'Typescript Svelte',
+		color: 'bg-orange-600'
+	}
+];
