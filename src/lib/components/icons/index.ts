@@ -6,6 +6,8 @@ import Leaf from './leaf.svelte';
 import RightArrow from './right-arrow.svelte';
 import Time from './time.svelte';
 import Community2 from './community2.svelte';
+import ResourceLib from './resource-lib.svelte';
+import Recipe from './recipe.svelte';
 
 export type IconType = HTMLAttributes<SVGSVGElement>;
 
@@ -16,5 +18,7 @@ export const Icons = {
 	Leaf,
 	RightArrow,
 	Time,
-	Community2
+	Community2,
+	ResourceLib,
+	Recipe
 };

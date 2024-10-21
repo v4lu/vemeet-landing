@@ -61,7 +61,7 @@
 	];
 </script>
 
-<section class="py-24 bg-background">
+<section class="py-24 bg-primary/5">
 	<div class="container px-4">
 		<!-- Header -->
 		<div class="max-w-4xl mx-auto text-center space-y-6 mb-16 animate-in fade-in duration-700">

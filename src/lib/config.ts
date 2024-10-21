@@ -15,3 +15,21 @@ export const hero_features = [
 		getMessage: () => m.feature_community({})
 	}
 ];
+
+export const community_lower_features = [
+	{
+		Icon: Icons.Recipe,
+		desc: m.feature_recipe_description(),
+		title: m.feature_recipe_title()
+	},
+	{
+		Icon: Icons.Events,
+		title: m.feature_events_title(),
+		desc: m.feature_events_description()
+	},
+	{
+		Icon: Icons.ResourceLib,
+		desc: m.feature_resources_description(),
+		title: m.feature_resources_title()
+	}
+];
