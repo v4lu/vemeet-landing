@@ -20,7 +20,7 @@
 		tl.to('.roadmap-header', {
 			y: 0,
 			opacity: 1,
-			duration: 0.6,
+			duration: 0.5,
 			ease: 'power2.out'
 		});
 
@@ -28,7 +28,7 @@
 			'.timeline-line',
 			{
 				scaleY: 1,
-				duration: 0.8,
+				duration: 0.7,
 				ease: 'none'
 			},
 			'-=0.3'
@@ -43,7 +43,7 @@
 				{
 					x: 0,
 					opacity: 1,
-					duration: 0.8,
+					duration: 0.7,
 					ease: 'power2.out'
 				},
 				`-=${0.5}`
@@ -69,7 +69,7 @@
 			{
 				y: 0,
 				opacity: 1,
-				duration: 0.6,
+				duration: 0.5,
 				ease: 'power2.out'
 			},
 			'-=0.3'

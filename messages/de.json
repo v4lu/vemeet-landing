@@ -2,7 +2,7 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"hello_world": "Hallo, {name}!",
 	"sign_in": "Anmelden",
-	"join_waitlist": "Demnächst verfügbar - Warteliste beitreten",
+	"join_waitlist": "Warteliste beitreten",
 	"hero_title": "Verbinde dich mit Menschen der pflanzlichen Ernährung",
 	"hero_description": "Werde Teil unserer Community für pflanzliche Ernährung und teile deine Reise mit anderen. Wir sind hier, um uns zu verbinden, zu unterstützen und uns gegenseitig zu inspirieren.",
 	"learn_more": "Mehr erfahren",
