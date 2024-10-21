@@ -19,18 +19,18 @@ export const hero_features = [
 export const community_lower_features = [
 	{
 		Icon: Icons.Recipe,
-		desc: m.feature_recipe_description(),
-		title: m.feature_recipe_title()
+		titleKey: 'feature_recipe_title',
+		descriptionKey: 'feature_recipe_description'
 	},
 	{
 		Icon: Icons.Events,
-		title: m.feature_events_title(),
-		desc: m.feature_events_description()
+		titleKey: 'feature_events_title',
+		descriptionKey: 'feature_events_description'
 	},
 	{
 		Icon: Icons.ResourceLib,
-		desc: m.feature_resources_description(),
-		title: m.feature_resources_title()
+		titleKey: 'feature_resources_title',
+		descriptionKey: 'feature_resources_description'
 	}
 ];
 
@@ -81,5 +81,42 @@ export const repositories = [
 		description: 'Web Landing Page',
 		language: 'Typescript Svelte',
 		color: 'bg-orange-600'
+	}
+];
+
+export const roadmapSteps = [
+	{
+		date: 'Q4 2024',
+		titleKey: 'roadmap_q4_2024_title',
+		descriptionKey: 'roadmap_q4_2024_description',
+		status: 'in-progress',
+		features: [
+			'feature_swiper',
+			'feature_messages',
+			'feature_locations',
+			'feature_recipes',
+			'feature_posts'
+		]
+	},
+	{
+		date: 'Q1 2025',
+		titleKey: 'roadmap_q1_2025_title',
+		descriptionKey: 'roadmap_q1_2025_description',
+		status: 'planned',
+		features: ['feature_ios', 'feature_android']
+	},
+	{
+		date: 'Q2 2025',
+		titleKey: 'roadmap_q2_2025_title',
+		descriptionKey: 'roadmap_q2_2025_description',
+		status: 'planeed',
+		features: ['feature_video', 'feature_blog', 'feature_library']
+	},
+	{
+		date: 'Q4 2025',
+		titleKey: 'roadmap_q4_2025_title',
+		descriptionKey: 'roadmap_q4_2025_description',
+		status: 'planned',
+		features: ['feature_calls', 'feature_groups', 'feature_planning']
 	}
 ];

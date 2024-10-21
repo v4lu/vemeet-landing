@@ -10,7 +10,6 @@
 	let sectionElement: HTMLElement;
 
 	const initializeAnimations = () => {
-		// Set initial states
 		gsap.set('.section-header', { y: 50, opacity: 0 });
 		gsap.set('.repositories-title', { y: 30, opacity: 0 });
 		gsap.set('.repository-card', { y: 50, opacity: 0 });
@@ -18,18 +17,15 @@
 		gsap.set('.contribution-card', { y: 40, opacity: 0 });
 		gsap.set('.contact-section', { y: 30, opacity: 0, scale: 0.95 });
 
-		// Create main timeline
 		const tl = gsap.timeline();
 
-		// Header animation
 		tl.to('.section-header', {
 			y: 0,
 			opacity: 1,
-			duration: 1,
+			duration: 0.8,
 			ease: 'power3.out'
 		});
 
-		// Repositories section
 		tl.to('.repositories-title', {
 			y: 0,
 			opacity: 1,
@@ -37,7 +33,6 @@
 			ease: 'power2.out'
 		});
 
-		// Repository cards with stagger
 		tl.to(
 			'.repository-card',
 			{
@@ -52,7 +47,6 @@
 			'-=0.4'
 		);
 
-		// Contribution areas section
 		tl.to(
 			'.contribution-title',
 			{
@@ -64,7 +58,6 @@
 			'-=0.2'
 		);
 
-		// Contribution cards with stagger
 		tl.to(
 			'.contribution-card',
 			{
@@ -79,14 +72,13 @@
 			'-=0.4'
 		);
 
-		// Contact section with scale
 		tl.to(
 			'.contact-section',
 			{
 				y: 0,
 				opacity: 1,
 				scale: 1,
-				duration: 1,
+				duration: 0.8,
 				ease: 'power3.out'
 			},
 			'-=0.3'

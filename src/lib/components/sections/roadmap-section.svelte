@@ -3,46 +3,10 @@
 	import { Button } from '../ui';
 	import * as m from '$lib/paraglide/messages';
 	import gsap from 'gsap';
+	import { roadmapSteps } from '$lib/config';
 
 	let sectionVisible = $state(false);
 	let sectionElement: HTMLElement;
-
-	const roadmapSteps = [
-		{
-			date: 'Q4 2024',
-			titleKey: 'roadmap_q4_2024_title',
-			descriptionKey: 'roadmap_q4_2024_description',
-			status: 'in-progress',
-			features: [
-				'feature_swiper',
-				'feature_messages',
-				'feature_locations',
-				'feature_recipes',
-				'feature_posts'
-			]
-		},
-		{
-			date: 'Q1 2025',
-			titleKey: 'roadmap_q1_2025_title',
-			descriptionKey: 'roadmap_q1_2025_description',
-			status: 'planned',
-			features: ['feature_ios', 'feature_android']
-		},
-		{
-			date: 'Q2 2025',
-			titleKey: 'roadmap_q2_2025_title',
-			descriptionKey: 'roadmap_q2_2025_description',
-			status: 'planeed',
-			features: ['feature_video', 'feature_blog', 'feature_library']
-		},
-		{
-			date: 'Q4 2025',
-			titleKey: 'roadmap_q4_2025_title',
-			descriptionKey: 'roadmap_q4_2025_description',
-			status: 'planned',
-			features: ['feature_calls', 'feature_groups', 'feature_planning']
-		}
-	];
 
 	const initializeAnimations = () => {
 		gsap.set('.roadmap-header', { y: 50, opacity: 0 });
@@ -56,20 +20,19 @@
 		tl.to('.roadmap-header', {
 			y: 0,
 			opacity: 1,
-			duration: 1,
-			ease: 'power3.out'
+			duration: 0.6,
+			ease: 'power2.out'
 		});
 
 		tl.to(
 			'.timeline-line',
 			{
 				scaleY: 1,
-				duration: 1.2,
+				duration: 0.8,
 				ease: 'none'
 			},
-			'-=0.5'
+			'-=0.3'
 		);
-
 		const roadmapItems = document.querySelectorAll('.roadmap-item');
 		roadmapItems.forEach((item, index) => {
 			const isLeft = index % 2 === 0;
@@ -80,8 +43,8 @@
 				{
 					x: 0,
 					opacity: 1,
-					duration: 1,
-					ease: 'power3.out'
+					duration: 0.8,
+					ease: 'power2.out'
 				},
 				`-=${0.5}`
 			);
@@ -93,10 +56,10 @@
 					{
 						y: 0,
 						opacity: 1,
-						duration: 0.5,
-						ease: 'power2.out'
+						duration: 0.4,
+						ease: 'power1.out'
 					},
-					`-=${0.3}`
+					`-=${0.2}`
 				);
 			});
 		});
@@ -106,10 +69,10 @@
 			{
 				y: 0,
 				opacity: 1,
-				duration: 1,
-				ease: 'power3.out'
+				duration: 0.6,
+				ease: 'power2.out'
 			},
-			'-=0.5'
+			'-=0.3'
 		);
 	};
 
@@ -119,8 +82,7 @@
 				entries.forEach((entry) => {
 					if (entry.isIntersecting && !sectionVisible) {
 						sectionVisible = true;
-						// Small delay to ensure elements are ready
-						setTimeout(initializeAnimations, 100);
+						setTimeout(initializeAnimations, 50);
 						observer.unobserve(entry.target);
 					}
 				});

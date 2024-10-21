@@ -34,7 +34,7 @@
 	});
 </script>
 
-<section class="py-24 bg-primary/5" bind:this={sectionElement}>
+<section id="community" class="py-24 bg-primary/5" bind:this={sectionElement}>
 	<div class="container px-4">
 		<div class="grid lg:grid-cols-2 gap-12 items-center">
 			{#if sectionVisible}

@@ -30,3 +30,5 @@ export const Icons = {
 	Translation,
 	Docs
 };
+
+export { default as ValuLogo } from './valu-logo.svelte';

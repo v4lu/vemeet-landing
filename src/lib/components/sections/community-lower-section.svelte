@@ -72,9 +72,8 @@
 					{m.features_description()}
 				</p>
 			</div>
-
 			<div class="grid md:grid-cols-3 gap-8">
-				{#each community_lower_features as { Icon, desc, title }}
+				{#each community_lower_features as { Icon, titleKey, descriptionKey }}
 					<div
 						class="feature-card bg-primary/5 p-6 rounded-xl space-y-4 transform hover:scale-105 hover:bg-primary/10"
 						style="transition: transform 0.3s ease"
@@ -82,9 +81,9 @@
 						<div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
 							<Icon class="size-6 text-primary" />
 						</div>
-						<h3 class="text-xl font-semibold text-foreground">{title}</h3>
+						<h3 class="text-xl font-semibold text-foreground">{m[titleKey]()}</h3>
 						<p class="text-muted-foreground">
-							{desc}
+							{m[descriptionKey]()}
 						</p>
 					</div>
 				{/each}

@@ -13,6 +13,7 @@
 </script>
 
 <section
+	id="hero"
 	class="pt-32 md:pt-0 pb-8 md:pb-0 relative min-h-[100dvh] bg-background flex items-center justify-center overflow-hidden"
 >
 	<!-- Animated Background Pattern -->
