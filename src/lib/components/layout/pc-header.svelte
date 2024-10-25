@@ -1,13 +1,13 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import { APP_URL } from '$lib/constants';
 	import { i18n } from '$lib/i18n';
+	import * as m from '$lib/paraglide/messages.js';
 	import type { AvailableLanguageTag } from '$lib/paraglide/runtime';
+	import Icon from '@iconify/svelte';
 	import { Logo } from '.';
 	import { buttonVariants } from '../ui';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
-	import * as m from '$lib/paraglide/messages.js';
-	import Icon from '@iconify/svelte';
 
 	type Props = {
 		lang: 'en' | 'de';
@@ -55,7 +55,7 @@
 			class="flex items-center justify-center gap-2 text-xl font-bold text-primary transition-transform hover:scale-105"
 		>
 			<Logo class="size-10" />
-			<span class="-mt-1" class:scrolled> vemeet </span>
+			<span class="-mt-1" class:scrolled> Vemeet </span>
 		</a>
 
 		<div class="flex items-center gap-4">

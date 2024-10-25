@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Icons } from '../icons';
-	import { Button } from '../ui';
+	import { roadmapSteps } from '$lib/config';
 	import * as m from '$lib/paraglide/messages';
 	import gsap from 'gsap';
-	import { roadmapSteps } from '$lib/config';
+	import { Icons } from '../icons';
+	import { Button } from '../ui';
 
 	let sectionVisible = $state(false);
 	let sectionElement: HTMLElement;
@@ -20,7 +20,7 @@
 		tl.to('.roadmap-header', {
 			y: 0,
 			opacity: 1,
-			duration: 0.5,
+			duration: 0.4,
 			ease: 'power2.out'
 		});
 
@@ -43,7 +43,7 @@
 				{
 					x: 0,
 					opacity: 1,
-					duration: 0.7,
+					duration: 0.6,
 					ease: 'power2.out'
 				},
 				`-=${0.5}`
@@ -56,7 +56,7 @@
 					{
 						y: 0,
 						opacity: 1,
-						duration: 0.4,
+						duration: 0.3,
 						ease: 'power1.out'
 					},
 					`-=${0.2}`
@@ -69,7 +69,7 @@
 			{
 				y: 0,
 				opacity: 1,
-				duration: 0.5,
+				duration: 0.4,
 				ease: 'power2.out'
 			},
 			'-=0.3'

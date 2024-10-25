@@ -19,6 +19,7 @@ WORKDIR /app
 COPY --from=builder /app/build ./build
 COPY package.json pnpm-lock.yaml* ./
 RUN pnpm install --prod --no-frozen-lockfile
-
-EXPOSE 3000
+ENV PORT=5000
+ENV HOST=0.0.0.0
+EXPOSE 5000
 CMD ["node", "build"]
