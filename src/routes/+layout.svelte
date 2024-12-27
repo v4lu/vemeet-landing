@@ -4,10 +4,12 @@
 	import { i18n } from '$lib/i18n';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { MobHeader, Footer, PcHeader } from '$lib/components/layout';
+	import { CookieConsent } from '$lib/components/layout';
 	let { children, data } = $props();
 </script>
 
 <ParaglideJS {i18n}>
+	<CookieConsent />
 	<PcHeader lang={data.lang} />
 	<MobHeader lang={data.lang} />
 	<main class="flex-1">

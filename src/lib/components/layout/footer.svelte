@@ -12,43 +12,32 @@
 			{ label: 'Download', href: '/download' },
 			{ label: 'Roadmap', href: '/roadmap' }
 		],
-		company: [
+		team: [
 			{ label: 'About Us', href: '/about' },
 			{ label: 'Blog', href: '/blog' },
 			{ label: 'Press Kit', href: '/press' }
 		],
 		resources: [
 			{ label: 'Documentation', href: '/docs' },
-			{ label: 'Community', href: '/community' },
-			{ label: 'API', href: '/api' }
+			{ label: 'API', href: 'https://core.vemeet.me/swagger-ui/index.html' }
 		],
 		legal: [
-			{ label: 'Privacy Policy', href: '/privacy' },
-			{ label: 'Terms of Service', href: '/terms' },
-			{ label: 'Cookie Policy', href: '/cookies' },
-			{ label: 'License', href: '/license' }
+			{ label: 'Privacy Policy', href: '/legal/privacy' },
+			{ label: 'Terms of Service', href: '/legal/tos' },
+			{ label: 'Cookie Policy', href: '/legal/cookies' },
+			{ label: 'License', href: '/legal/license' }
 		]
 	};
 
 	const socials = [
 		{
 			label: 'GitHub',
-			href: 'https://github.com/vemeet',
+			href: 'https://github.com/v4lu',
 			icon: 'mdi:github'
 		},
 		{
-			label: 'Twitter',
-			href: 'https://twitter.com/vemeet',
-			icon: 'prime:twitter'
-		},
-		{
-			label: 'Discord',
-			href: 'https://discord.gg/vemeet',
-			icon: 'ic:baseline-discord'
-		},
-		{
 			label: 'Telegram',
-			href: 'https://linkedin.com/company/vemeet',
+			href: 'https://t.me/vemeetapp',
 			icon: 'ic:baseline-telegram'
 		}
 	];
@@ -125,16 +114,11 @@
 			<div
 				class="footer-bottom container pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-muted-foreground"
 			>
-				<div class="flex gap-3 sm:gap-5 items-center justify-center">
+				<div class="flex gap-3 sm:gap-5 items-center justify-center w-full">
 					<ValuLogo height={28} width={28} />
 					<a href="https://valu-media.com" class="hover:underline"
 						>© {currentYear} Valu Media. All rights reserved.</a
 					>
-				</div>
-				<div class="flex gap-4 sm:gap-6">
-					<a href="/terms" class="hover:text-primary transition-colors">Terms</a>
-					<a href="/privacy" class="hover:text-primary transition-colors">Privacy</a>
-					<a href="/cookies" class="hover:text-primary transition-colors">Cookies</a>
 				</div>
 			</div>
 		</div>

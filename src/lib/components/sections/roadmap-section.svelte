@@ -4,6 +4,7 @@
 	import gsap from 'gsap';
 	import { Icons } from '../icons';
 	import { Button } from '../ui';
+	import { cn } from '$lib';
 
 	let sectionVisible = $state(false);
 	let sectionElement: HTMLElement;
@@ -122,8 +123,14 @@
 
 				{#each roadmapSteps as step, index}
 					<div class="roadmap-item relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 last:mb-0">
-						<div class={`md:text-right ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-							<div class="flex items-center justify-center md:justify-end gap-4">
+						<div class={cn(index % 2 === 0 ? 'md:order-1' : 'md:order-2')}>
+							<div
+								class={cn(
+									'flex items-center justify-center gap-4',
+
+									index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'
+								)}
+							>
 								<span class="text-xl font-semibold text-primary">{step.date}</span>
 								<div class="relative">
 									<div
@@ -139,7 +146,7 @@
 						</div>
 
 						<div class={index % 2 === 0 ? 'md:order-2' : 'md:order-1'}>
-							<div class="bg-background p-6 rounded-xl shadow-sm space-y-4">
+							<div class="p-6 space-y-4">
 								<div class="flex items-center gap-3">
 									<h3 class="text-xl font-semibold text-foreground">{m[step.titleKey]()}</h3>
 									{#if step.status === 'completed'}
